@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% load tag_menu %}
+
+
+{% block sidebar %}
+<ul class="list-group">
+    {% draw_menu 'Main menu 1' %}
+
+    {% draw_menu 'mm2' %}
+</ul>
+{% endblock %}
+
+{% block content %}
+
+{% if item %}
+    <h1 align="center">{{item.name}}</h1>
+    <br>
+    <br>
+    <code>{{item.description}}</code>
+{% else %}
+    <h1 align="center">Home</h1>
+    <br>
+    <br>
+    <code>Here will be descriptions of menu items</code>
+{% endif %}
+
+{% endblock %}
